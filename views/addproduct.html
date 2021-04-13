@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Add Products Here!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="text-center">
+                <form class="form" method="POST" action = "/admin/addProduct">
+                    <div class="formgroup">
+                        <label for="prodName">
+                            Enter Product Name : 
+                        </label>
+                        <input id="prodName" class="form-control" type="text" placeholder="Enter Product Name Here" name="nameOfProduct">
+                    </div>
+                    <div class="formgroup">
+                        <label for="prodPrice">
+                            Enter Product Price : 
+                        </label>
+                        <input id="prodPrice" class="form-control" type="text" placeholder="Enter Product Price Here" name="priceOfProduct">
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-success">Add Product!</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
