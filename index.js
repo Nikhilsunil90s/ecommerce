@@ -14,6 +14,5 @@ app.use(express.static('public'));
 app.use('/admin' , admin.adminRouter);
 app.use(user);
 
-
 app.listen(3000);
 

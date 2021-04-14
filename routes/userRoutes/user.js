@@ -1,14 +1,9 @@
 const router = require('express').Router();
 const path = require('path');
 const admin = require('../adminRoutes/admin');
+const shopController = require('../../controllers/shopController');
 
 
-router.get('/' , (req,res,next) => {
-    console.log(admin.Products);
-    // return res.sendFile(path.join(__dirname , '../../' , 'views' , 'home.html'));
-    return res.render('home' , {
-        products: admin.Products
-    });
-});
+router.get('/' , shopController.getHomePage);
 
 module.exports = router;
