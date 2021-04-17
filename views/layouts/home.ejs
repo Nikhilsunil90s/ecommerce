@@ -1,23 +1,52 @@
 <%- include('../includes/header') %>
 <div class="container">
+    <% if (isAdmin) { %>
+        <div class="text-center">
+            <h2>Welcome To Shope AdminHome!</h2>
+            <% if(products.length > 0) { %>
+                <% for(let i of products) { %>
+                    <div class="card">
+                        <div class="card-header">
+                            <h1>
+                                <%= i.productName %>
+                            </h1>
+                        </div>
+                        <div class="card-body">
+                            <pre>Product Information</pre>
+                        </div>
+                        <div class="card-footer">
+                            <p1>Price : <%= i.productPrice %>
+                            </p1>
+                        </div>
+                    </div>
+                    <% } %>
+            <% } else {  %>
+                <div class="text-center">
+                <pre>No Products Yet!</pre>
+                </div>
+            <% } %>
+        </div>
+    <% } else { %>
     <div class="text-center">
-        <h2>Welcome To Shope Home!</h2>
+        <h2>Welcome To Shope UserHome!</h2>
         <% if(products.length > 0) { %>
             <% for(let i of products) { %>
                 <div class="card">
                     <div class="card-header">
                         <h1>
-                            <%= i.prodName %>
+                            <%= i.productName %>
                         </h1>
                     </div>
                     <div class="card-body">
                         <pre>Product Information</pre>
                     </div>
                     <div class="card-footer">
-                        <p1>Price : <%= i.prodPrice %>
+                        <p1>Price : <%= i.productPrice %>
                         </p1>
                     </div>
+                    <a class="btn btn-warning" href="/product/<%= i.id %>">View Details!</a>
                 </div>
+                <hr>
                 <% } %>
         <% } else {  %>
             <div class="text-center">
@@ -25,5 +54,6 @@
             </div>
         <% } %>
     </div>
+    <% } %>
 </div>
 <%- include('../includes/footer') %>
